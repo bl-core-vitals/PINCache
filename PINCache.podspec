@@ -22,6 +22,7 @@ EOS
   s.prefix_header_contents = pch_PIN
   s.subspec 'Core' do |sp|
       sp.source_files  = 'Source/*.{h,m}'
+      sp.public_header_files  = 'Source/**/*.h'
       sp.dependency 'PINOperation', '~> 1.2.0'
   end
   s.subspec 'Arc-exception-safe' do |sp|
@@ -29,4 +30,5 @@ EOS
       sp.source_files = 'Source/PINDiskCache.m'
       sp.compiler_flags = '-fobjc-arc-exceptions'
   end
+  s.default_subspecs = 'Core'
 end
